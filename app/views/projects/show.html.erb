@@ -1,0 +1,25 @@
+<h2>Project Show Page</h2>
+
+<h3>Name: <%= @project.title %> </h3>
+
+<h3> Description: <%= @project.description %> </h3>
+
+<h3> Goal Amount: $<%= @project.goal_amount %> </h3>
+
+<h3> Pledged So Far: $<%= @project.pledges.sum(:pledged_amount) %> </h3>
+
+<h3> Deadline: <%= @project.deadline.strftime('%B %e, %l:%M %p') %> </h3>
+
+
+<%= form_for [@user, @project, @pledge] do |f| %>
+
+  <div class="row">
+
+    <div class='form-group col-lg-3'>
+    <%= f.label :pledged_amount %>
+    <%= f.number_field :pledged_amount, class: "form-control" %>
+  </div>
+</div>
+
+  <%= f.submit class:"btn btn-primary" %>
+<% end %>

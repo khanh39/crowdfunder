@@ -1,0 +1,33 @@
+<div class="form-container">
+
+
+<h3>Create a Project</h3>
+
+
+<%= form_for [@project] do |f| %>
+
+ <div class='field'>
+   <%= f.label :title%>
+   <%= f.text_field :title%>
+   </div>
+
+   <div class='field'>
+     <%= f.label :description %>
+     <%= f.text_area :description %>
+    </div>
+
+    <div class='field'>
+      <%= f.label :goal_amount %>
+      <%= f.number_field :goal_amount %>
+     </div>
+
+     <div class='field'>
+       <%= f.label :deadline %>
+       <%= f.date_field :deadline %>
+      </div>
+
+      <%= f.submit %>
+      <% end %>
+
+
+</div>

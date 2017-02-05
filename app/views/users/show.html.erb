@@ -1,0 +1,22 @@
+<h1>Users Profile </h1>
+
+  <div>
+
+    <%= @user.name %> </br>
+
+    <%= @user.email %> </br>
+<h2> My Pledges </h2>
+    <% @user.pledges.each do |pledge| %> </br>
+    <p>
+      pledged:
+      <%= pledge.pledged_amount %>
+      to
+    <%= pledge.project.title %>
+    </p>
+    <% end %>
+
+<h2> My Projects </h2>
+  <% @user.projects.each do |project| %> </br>
+  <p> project title: <%= project.title %>
+  </div>
+    <% end %>

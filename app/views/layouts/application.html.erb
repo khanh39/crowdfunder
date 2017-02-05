@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fundastic Crowdfunder</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+
+
+      <div id="home" class="background" align="center">
+        <br>
+        <div class = "menufont" align="center" id="nav-container">
+          <div align="center" id="nav"><div align="center" class="menu menufont">
+            <ul align="center" class = "menufont">
+
+
+
+              <li><%= link_to "Home",   root_path %></li>
+              <% if current_user %>
+              <li> <%= link_to "Log out", log_out_path %></li>
+              <% else %>
+                <li>  <%= link_to "Sign up", sign_up_path %> </li>
+                <li>  <%= link_to "log in", log_in_path %></li>
+              <% end %>
+            </ul>
+          </div>
+      </div>
+
+      <!-- DIAPLAYS UNDER NAV BAR - if user is logged in or not -->
+      <% if current_user %>
+      <div class="white">
+        Logged in as &nbsp; <%= link_to current_user.name, current_user %>
+      </div>
+        <% end %>
+        <!--  -->
+    </div>
+
+
+
+    </div>
+  </header>
+<br>
+  <% if flash.any? %>
+    <% flash.each do |key, value| %>
+    <p class = "<%= key %>">
+      <%= value %>
+    </p>
+    <% end %>
+    <% end %>
+
+
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+
+  <div class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <p class="navbar-text pull-left">©2016 Fundastic Inc.</p>
+  </div>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,12 @@
+<h4><%= link_to "Create a New Project", new_project_path %></h4>
+
+<h3>All Projects</h3>
+
+<% @projects.each do |project| %>
+<p>
+  <h4><%= link_to project.title, project_path(project.id) %></h4>
+  <%= project.description %><br />
+  <%= project.goal_amount %>
+</p>
+
+<% end %>

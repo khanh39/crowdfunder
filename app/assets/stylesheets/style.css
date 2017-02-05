@@ -1,0 +1,55 @@
+
+
+
+.white {
+  color: white;
+}
+
+
+
+
+
+
+
+
+/*nav bar*/
+
+
+
+
+ #nav ul {
+ 	font-size: 13px;
+ 	list-style: none;
+ 	width: auto;
+ 	display: table;
+ 	margin: 0 auto 0 auto;
+ 	padding-left: 0;
+ }
+
+ #nav li {
+ 	float: left;
+ 	position: relative;
+ 	font-weight: 500;
+ 	 list-style-type: none;
+
+ }
+ #nav a {
+
+ 	display: block;
+     margin-left: auto;
+     margin-right: auto;
+ 	text-transform: uppercase;
+ 	margin: 0 0px 0 0;
+ 	line-height: 2.3em;
+ 	padding: 0 1.2125em;
+ 	text-decoration: none;
+ }
+
+
+ #nav li:hover > a,
+ #nav ul ul :hover > a,
+ #nav a:focus {}
+ #nav li:hover > a,
+ #nav a:focus {
+ 	color: white;
+ }
